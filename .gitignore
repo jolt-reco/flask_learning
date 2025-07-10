@@ -1,0 +1,25 @@
+# Python用Git除外設定
+
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# VSCode settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Test/cache files
+.pytest_cache/
+.mypy_cache/
+coverage.*
+.cache
+
