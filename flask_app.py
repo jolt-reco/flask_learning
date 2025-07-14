@@ -20,6 +20,17 @@ def add():
 
     return f"{item}（{price}円）を登録しました！"
 
+@app.route("/list")
+def list_items():
+    items = []
+    try:
+        with open("item.csv", "r", encoding="utf-8")as f:
+            reader = csv.reader(f)
+            items = list(reader)
+    except FileNotFoundError:
+        items = []
+    return render_template("list.html", items=items)
+
 # 実行条件
 if __name__ == "__main__":
     app.run(debug=True)
