@@ -8,6 +8,9 @@
 <body>
   <h1>商品を登録</h1>
   <form method="POST" action="/add">
+    {% if error %}
+    <p style="color: red;">{{error}}</p>
+    {% endif %}
     <label>商品名:</label><input type="text" name="item"><br>
     <label>価格:</label><input type="number" name="price"><br>
     <button type="submit">登録</button>

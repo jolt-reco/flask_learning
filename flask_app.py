@@ -14,6 +14,10 @@ def add():
     item  = request.form["item"]          # フォームの name="item"
     price = request.form["price"]         # フォームの name="price"
 
+# 入力内容が空だった場合、エラー表示
+    if not item or not price:
+        return render_template("input.html", error = "エラー: 入力してください")
+
     with open("item.csv", "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([item, price])
