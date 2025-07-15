@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import csv
 
 app = Flask(__name__)
@@ -17,8 +17,8 @@ def add():
     with open("item.csv", "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([item, price])
-
-    return f"{item}（{price}円）を登録しました！"
+    
+    return redirect(url_for("list_items"))
 
 @app.route("/list")
 def list_items():
