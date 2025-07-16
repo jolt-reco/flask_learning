@@ -1,0 +1,22 @@
+<!-- templates/edit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>商品編集フォーム</title>
+</head>
+<body>
+    <h1>商品を編集</h1>
+    <form method="POST" action="/update">
+        <!-- 編集対象のidをPOSTで送る -->
+        <input type="hidden" name="id" value="{{id}}">
+        <label>商品名:</label>
+        <input type="text" name="item" value="{{ item }}"><br>
+        <label>価格:</label>
+        <input type="number" name="price" value="{{ price }}"><br>
+        <button type="submit">更新</button>
+    </form>
+    <p><a href="/list">一覧に戻る</a></p>
+</body>
+</html>
+    

@@ -13,10 +13,11 @@
             <th>商品名</th>
             <th>価格</th>
         </tr>
-        {% for item, price in items %}
+        {% for i, (item, price) in enumerate(items) %}
         <tr>
             <td>{{ item }}</td>
             <td>{{ price }}円</td>
+            <td><a href="/edit/{{ i }}">編集</a></td>
         </tr>
         {% endfor %}
     </table>
