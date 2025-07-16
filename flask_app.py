@@ -60,7 +60,7 @@ def update():
 
     with open("item.csv", "w", newline="", encoding="UTF-8")as f:
         writer = csv.writer(f)
-        writer.writerow(data)
+        writer.writerows(data)
     
     return redirect(url_for("list_items"))
 
