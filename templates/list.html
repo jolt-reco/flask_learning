@@ -18,6 +18,7 @@
             <td>{{ item }}</td>
             <td>{{ price }}円</td>
             <td><a href="/edit/{{ loop.index0 }}">編集</a></td>
+            <td><a href="/delete/{{ loop.index0 }}">削除</a></td>
         </tr>
         {% endfor %}
     </table>

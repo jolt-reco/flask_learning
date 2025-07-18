@@ -64,6 +64,20 @@ def update():
     
     return redirect(url_for("list_items"))
 
+@app.route("/delete/<int:id>")
+def delete(id):
+    with open("item.csv", "r", encoding="UTF-8")as f:
+        reader = list(csv.reader(f))
+        if id < 0 or id >= len(reader):
+            return "対象がありません", 404
+        del reader[id]
+
+        with open("item.csv", "w", newline="", encoding="UTF-8")as f:
+            writer = csv.writer(f)
+            writer.writerows(reader)
+    
+    return redirect(url_for("list_items")) 
+
 # 実行条件
 if __name__ == "__main__":
     app.run(debug=True)
